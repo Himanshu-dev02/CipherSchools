@@ -1,0 +1,75 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ─── Container ────────────────────────────────────────
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @include respond-md {
+        padding: 0 $spacing-xl;
+    }
+
+    @include respond-xl {
+        padding: 0 $spacing-2xl;
+    }
+}
+
+// ─── Page Layout ──────────────────────────────────────
+.page {
+    min-height: calc(100vh - 70px);
+    padding: $spacing-lg 0;
+
+    @include respond-md {
+        padding: $spacing-xl 0;
+    }
+
+    @include respond-lg {
+        padding: $spacing-2xl 0;
+    }
+}
+
+// ─── Grid ─────────────────────────────────────────────
+.grid {
+    display: grid;
+    gap: $spacing-lg;
+
+    &--cards {
+        grid-template-columns: 1fr;
+
+        @include respond-md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-xl {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// ─── Section Headers ──────────────────────────────────
+.section-header {
+    margin-bottom: $spacing-xl;
+
+    &__title {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $color-text-primary;
+        margin-bottom: $spacing-sm;
+
+        @include respond-md {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__subtitle {
+        font-size: $font-size-base;
+        color: $color-text-secondary;
+
+        @include respond-md {
+            font-size: $font-size-lg;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.results-table {
+    @include card;
+    overflow: hidden;
+
+    &__header {
+        @include flex-between;
+        padding: $spacing-sm $spacing-md;
+        background: rgba($color-accent, 0.08);
+        border-bottom: 1px solid $color-border;
+    }
+
+    &__count {
+        font-size: $font-size-xs;
+        color: $color-text-secondary;
+        font-weight: $font-weight-medium;
+    }
+
+    &__wrapper {
+        overflow-x: auto;
+        @include custom-scrollbar;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: $font-size-sm;
+    }
+
+    &__th {
+        position: sticky;
+        top: 0;
+        background: $color-bg-secondary;
+        color: $color-accent;
+        text-align: left;
+        padding: $spacing-sm $spacing-md;
+        font-family: $font-mono;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        border-bottom: 2px solid $color-accent-glow;
+    }
+
+    &__row {
+        transition: background $transition-fast;
+
+        &:hover {
+            background: rgba($color-accent, 0.04);
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-border;
+        }
+    }
+
+    &__td {
+        padding: $spacing-sm $spacing-md;
+        color: $color-text-primary;
+        font-family: $font-mono;
+        font-size: $font-size-xs;
+        white-space: nowrap;
+        max-width: 300px;
+        @include truncate;
+    }
+}

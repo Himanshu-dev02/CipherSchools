@@ -1,0 +1,164 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'layout';
+
+// ─── CSS Reset & Base ─────────────────────────────────
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $font-sans;
+    background: $color-bg-primary;
+    color: $color-text-primary;
+    line-height: 1.6;
+    min-height: 100vh;
+    @include custom-scrollbar;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-accent-hover;
+    }
+}
+
+code,
+pre {
+    font-family: $font-mono;
+}
+
+// ─── Button Variants ──────────────────────────────────
+.btn {
+    @include btn-base;
+
+    &--primary {
+        background: $color-accent;
+        color: #ffffff;
+
+        &:hover:not(:disabled) {
+            background: $color-accent-hover;
+            box-shadow: $shadow-glow;
+            transform: translateY(-1px);
+        }
+
+        &:active:not(:disabled) {
+            transform: translateY(0);
+        }
+    }
+
+    &--secondary {
+        background: transparent;
+        color: $color-accent;
+        border: 1px solid $color-accent;
+
+        &:hover:not(:disabled) {
+            background: $color-accent-glow;
+        }
+    }
+
+    &--success {
+        background: $color-success;
+        color: #ffffff;
+
+        &:hover:not(:disabled) {
+            background: darken($color-success, 8%);
+            transform: translateY(-1px);
+        }
+    }
+
+    &--danger {
+        background: $color-danger;
+        color: #ffffff;
+
+        &:hover:not(:disabled) {
+            background: darken($color-danger, 8%);
+        }
+    }
+
+    &--sm {
+        padding: $spacing-xs $spacing-md;
+        font-size: $font-size-xs;
+        min-height: 36px;
+    }
+
+    &--lg {
+        padding: $spacing-md $spacing-xl;
+        font-size: $font-size-base;
+        min-height: 52px;
+    }
+}
+
+// ─── Spinner ──────────────────────────────────────────
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ─── Animations ───────────────────────────────────────
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}

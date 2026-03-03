@@ -1,0 +1,25 @@
+{
+  "name": "ciphersqlstudio-backend",
+  "version": "1.0.0",
+  "description": "Backend API for CipherSQLStudio — a browser-based SQL learning platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed:mongo": "node db/seed-mongo.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.10.1",
+    "openai": "^4.82.0",
+    "pg": "^8.13.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

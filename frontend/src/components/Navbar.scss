@@ -1,0 +1,59 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    @include glass;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    &__inner {
+        @include flex-between;
+        height: 70px;
+    }
+
+    &__brand {
+        @include flex-center;
+        gap: $spacing-sm;
+        text-decoration: none;
+        color: $color-text-primary;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    &__logo {
+        font-family: $font-mono;
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $color-accent;
+        background: $color-accent-glow;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $radius-sm;
+    }
+
+    &__title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        letter-spacing: -0.5px;
+
+        @include respond-md {
+            font-size: $font-size-xl;
+        }
+    }
+
+    &__tagline {
+        display: none;
+        font-size: $font-size-sm;
+        color: $color-text-muted;
+        font-weight: $font-weight-medium;
+
+        @include respond-md {
+            display: block;
+        }
+    }
+}

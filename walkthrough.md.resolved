@@ -1,0 +1,50 @@
+# CipherSQLStudio — Build Walkthrough
+
+## What Was Built
+
+A full-stack SQL learning platform with:
+- **Backend** (Node.js + Express) — 3 API endpoints, SQL security middleware, PostgreSQL sandbox, MongoDB assignments, OpenAI hint service
+- **Frontend** (React + Vite) — Monaco SQL editor, assignment list/editor pages, results table, hint card, dark-themed SCSS design system
+- **Demo Mode** — Frontend works standalone with mock data when backend is unavailable
+
+## Live Demo Screenshots
+
+### Assignment List Page
+Gradient title, stats dashboard, animated cards with difficulty badges, and demo mode banner:
+
+![Assignment List with Demo Mode](file:///C:/Users/HP/.gemini/antigravity/brain/636f22e7-0410-45fb-a5eb-039e736b0a43/home_page_top_demo_mode_1772477045489.png)
+
+### SQL Editor Page
+Monaco editor with SQL syntax highlighting, available tables panel, and action buttons:
+
+![SQL Editor](file:///C:/Users/HP/.gemini/antigravity/brain/636f22e7-0410-45fb-a5eb-039e736b0a43/editor_page_layout_1772477091702.png)
+
+### Results Table + AI Hint
+Query results in a styled table, and the AI hint card with guiding advice:
+
+![Results and Hint](file:///C:/Users/HP/.gemini/antigravity/brain/636f22e7-0410-45fb-a5eb-039e736b0a43/full_assignment_page_with_hint_1772477277713.png)
+
+## Demo Recording
+
+![Full Demo Walkthrough](file:///C:/Users/HP/.gemini/antigravity/brain/636f22e7-0410-45fb-a5eb-039e736b0a43/demo_mode_walkthrough_1772476992615.webp)
+
+## Files Created
+
+| Area | Count | Key Files |
+|------|-------|-----------|
+| Backend | 14 | [server.js](file:///d:/cipher/backend/server.js), controllers, routes, middleware, models, services, seeds |
+| Frontend | 17 | Pages, components, SCSS design system, API layer, mock data |
+| Root | 1 | [README.md](file:///d:/cipher/README.md) |
+
+## Verification
+
+| Check | Result |
+|-------|--------|
+| `npm install` (backend) | ✅ |
+| `npm install` (frontend) | ✅ |
+| `npm run build` (frontend) | ✅ 95 kB in 3.21s |
+| Demo mode (no backend) | ✅ All features work with mock data |
+| Assignment list renders | ✅ 7 cards with difficulty badges |
+| Monaco editor loads | ✅ SQL syntax highlighting |
+| Execute returns results | ✅ 5-row table displayed |
+| Hint card displays | ✅ Guiding hint shown |

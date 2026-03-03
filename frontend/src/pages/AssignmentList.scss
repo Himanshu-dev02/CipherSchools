@@ -1,0 +1,162 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+// ─── Hero Section ─────────────────────────────────────
+.assignment-list {
+    &__hero {
+        text-align: center;
+        padding: $spacing-2xl 0;
+        margin-bottom: $spacing-xl;
+
+        @include respond-md {
+            padding: $spacing-3xl 0;
+        }
+    }
+
+    &__title {
+        font-size: $font-size-3xl;
+        font-weight: $font-weight-extrabold;
+        background: linear-gradient(135deg, $color-accent, #a78bfa, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: $spacing-sm;
+
+        @include respond-md {
+            font-size: $font-size-4xl;
+        }
+    }
+
+    &__subtitle {
+        font-size: $font-size-base;
+        color: $color-text-secondary;
+        max-width: 550px;
+        margin: 0 auto $spacing-xl;
+
+        @include respond-md {
+            font-size: $font-size-lg;
+        }
+    }
+
+    &__stats {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-lg;
+        flex-wrap: wrap;
+
+        @include respond-md {
+            gap: $spacing-2xl;
+        }
+    }
+
+    &__stat {
+        @include flex-column;
+        align-items: center;
+        gap: $spacing-xs;
+    }
+
+    &__stat-value {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $color-accent;
+
+        @include respond-md {
+            font-size: $font-size-3xl;
+        }
+    }
+
+    &__stat-label {
+        font-size: $font-size-xs;
+        color: $color-text-muted;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: $font-weight-medium;
+    }
+
+    // Loading & Error states
+    &__loading,
+    &__error {
+        @include flex-center;
+        @include flex-column;
+        gap: $spacing-md;
+        padding: $spacing-3xl 0;
+        color: $color-text-secondary;
+        font-size: $font-size-base;
+    }
+
+    &__error {
+        color: $color-danger;
+    }
+
+    &__error-icon {
+        font-size: $font-size-3xl;
+    }
+}
+
+// ─── Assignment Card ──────────────────────────────────
+.assignment-card {
+    @include card;
+    @include flex-column;
+    padding: $spacing-lg;
+    gap: $spacing-md;
+    opacity: 0; // Animate in via fadeInUp
+
+    &:hover {
+        border-color: $color-accent;
+        box-shadow: $shadow-glow;
+        transform: translateY(-4px);
+    }
+
+    &__top {
+        @include flex-between;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: $spacing-xs $spacing-md;
+        border-radius: $radius-full;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &--easy {
+            background: rgba($color-easy, 0.12);
+            color: $color-easy;
+        }
+
+        &--medium {
+            background: rgba($color-medium, 0.12);
+            color: $color-medium;
+        }
+
+        &--hard {
+            background: rgba($color-hard, 0.12);
+            color: $color-hard;
+        }
+    }
+
+    &__title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+
+        @include respond-md {
+            font-size: $font-size-xl;
+        }
+    }
+
+    &__desc {
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+        line-height: 1.6;
+        flex: 1;
+        @include truncate(3);
+    }
+
+    &__btn {
+        margin-top: auto;
+        width: 100%;
+        text-align: center;
+    }
+}
