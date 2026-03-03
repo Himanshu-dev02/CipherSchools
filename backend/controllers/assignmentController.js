@@ -1,23 +1,19 @@
 const Assignment = require('../models/Assignment');
 
-/**
- * Get all assignments — returns summary info for the listing page.
- */
+/* All assignment listin page data */
 const getAll = async (req, res) => {
     try {
         const assignments = await Assignment.find()
             .select('title description difficulty')
             .sort({ difficulty: 1 });
 
-        res.json({ success: true, data: assignments });
+            res.json({ success: true, data: assignments });
     } catch (err) {
         res.status(500).json({ success: false, error: err.message });
     }
 };
 
-/**
- * Get a single assignment by ID — returns full details for the editor page.
- */
+/* Single assignment details for editor page */
 const getById = async (req, res) => {
     try {
         const assignment = await Assignment.findById(req.params.id);
