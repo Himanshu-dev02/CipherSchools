@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { getAll, getById } = require('../controllers/assignmentController');
-
-/**
- * GET /api/assignments      — List all assignments
- * GET /api/assignments/:id  — Get single assignment details
- */
-router.get('/', getAll);
-router.get('/:id', getById);
-
-module.exports = router;
+const { getAll, getById } = require('../controllers/executeController');
+/* GET /api/execute*/
+router.get('/', getAll);    
+/* GET /api/execute/:id */
+router.get('/:id', getById); 
+module.exports = router;;
