@@ -36,11 +36,7 @@ INSERT INTO employees (first_name, last_name, email, department_id, salary, hire
 ('Frank', 'Miller', 'frank.miller@company.com', 6, 75000.00, '2022-11-01', 'Operations Manager'),
 ('Grace', 'Wilson', 'grace.wilson@company.com', 1, 80000.00, '2022-12-01', 'Senior Software Engineer'),
 ('Hank', 'Moore', 'hank.moore@company.com', 2, 85000.00, '2023-01-15', 'Marketing Manager'),
-('Ivy', 'Taylor', 'ivy.taylor@company.com', 3, 75000.00, '2023-02-01', 'Sales Representative'),
-('Jack', 'Anderson', 'jack.anderson@company.com', 4, 65000.00, '2023-03-15', 'Human Resources Specialist'),
-('Karen', 'Thomas', 'karen.thomas@company.com', 5, 70000.00, '2023-04-10', 'Financial Analyst'),
-('Leo', 'Jackson', 'leo.jackson@company.com', 6, 75000.00, '2023-05-15', 'Operations Manager');
-
+ 
 -- Customers --
 CREATE TABLE IF NOT EXISTS customers (
     id SERIAL PRIMARY KEY,
