@@ -5,7 +5,7 @@
 -- the sandbox tables that students will query.
 -- ============================================================
 
--- ─── Departments ──────────────────────────────────────
+--Departments --
 CREATE TABLE IF NOT EXISTS departments (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -21,7 +21,7 @@ INSERT INTO departments (name, location, budget) VALUES
 ('Finance', 'New York', 900000.00),
 ('Operations', 'Chicago', 700000.00);
 
--- ─── Employees ────────────────────────────────────────
+-- Employees --
 CREATE TABLE IF NOT EXISTS employees (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -34,21 +34,18 @@ CREATE TABLE IF NOT EXISTS employees (
 );
 
 INSERT INTO employees (first_name, last_name, email, department_id, salary, hire_date, job_title) VALUES
-('Alice', 'Johnson', 'alice.johnson@company.com', 1, 95000.00, '2021-03-15', 'Senior Developer'),
-('Bob', 'Smith', 'bob.smith@company.com', 1, 85000.00, '2022-07-01', 'Junior Developer'),
-('Carol', 'Williams', 'carol.williams@company.com', 2, 72000.00, '2020-11-20', 'Marketing Manager'),
-('David', 'Brown', 'david.brown@company.com', 3, 68000.00, '2023-01-10', 'Sales Representative'),
-('Eve', 'Davis', 'eve.davis@company.com', 1, 110000.00, '2019-06-05', 'Tech Lead'),
-('Frank', 'Miller', 'frank.miller@company.com', 4, 62000.00, '2022-09-12', 'HR Specialist'),
-('Grace', 'Wilson', 'grace.wilson@company.com', 5, 88000.00, '2021-04-22', 'Financial Analyst'),
-('Hank', 'Moore', 'hank.moore@company.com', 2, 55000.00, '2023-08-30', 'Content Writer'),
-('Ivy', 'Taylor', 'ivy.taylor@company.com', 6, 75000.00, '2020-02-14', 'Operations Manager'),
-('Jack', 'Anderson', 'jack.anderson@company.com', 3, 71000.00, '2021-12-01', 'Sales Manager'),
-('Karen', 'Thomas', 'karen.thomas@company.com', 1, 92000.00, '2022-03-18', 'Backend Developer'),
-('Leo', 'Jackson', 'leo.jackson@company.com', 5, 96000.00, '2020-08-25', 'Senior Accountant'),
-('Mia', 'White', 'mia.white@company.com', 4, 58000.00, '2023-05-15', 'Recruiter'),
-('Nathan', 'Harris', 'nathan.harris@company.com', 6, 65000.00, '2022-11-08', 'Logistics Coordinator'),
-('Olivia', 'Martin', 'olivia.martin@company.com', 2, 78000.00, '2021-09-30', 'Digital Marketing Lead');
+('Alice', 'Johnson', 'alice.johnson@company.com', 1, 95000.00, '2022-01-15', 'Software Engineer'),
+('Bob', 'Smith', 'bob.smith@company.com', 2, 85000.00, '2022-03-20', 'Marketing Specialist'),
+('Carol', 'Williams', 'carol.williams@company.com', 3, 75000.00, '2022-05-10', 'Sales Associate'),
+('David', 'Brown', 'david.brown@company.com', 4, 65000.00, '2022-07-15', 'Human Resources Specialist'),
+('Eve', 'Davis', 'eve.davis@company.com', 5, 70000.00, '2022-09-10', 'Financial Analyst'),
+('Frank', 'Miller', 'frank.miller@company.com', 6, 75000.00, '2022-11-01', 'Operations Manager'),
+('Grace', 'Wilson', 'grace.wilson@company.com', 1, 80000.00, '2022-12-01', 'Senior Software Engineer'),
+('Hank', 'Moore', 'hank.moore@company.com', 2, 85000.00, '2023-01-15', 'Marketing Manager'),
+('Ivy', 'Taylor', 'ivy.taylor@company.com', 3, 75000.00, '2023-02-01', 'Sales Representative'),
+('Jack', 'Anderson', 'jack.anderson@company.com', 4, 65000.00, '2023-03-15', 'Human Resources Specialist'),
+('Karen', 'Thomas', 'karen.thomas@company.com', 5, 70000.00, '2023-04-10', 'Financial Analyst'),
+('Leo', 'Jackson', 'leo.jackson@company.com', 6, 75000.00, '2023-05-15', 'Operations Manager');
 
 -- ─── Customers ────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS customers (
