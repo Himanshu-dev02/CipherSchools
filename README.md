@@ -1,5 +1,5 @@
 
-# CipherSQLStudio 
+# SQL Editor 
 ![CipherSQLStudio Cover](./frontend/src/assets/Screenshot%202026-03-04%20150716.png)
 This is the setup guide I wish I had before running this project the first time.
 
